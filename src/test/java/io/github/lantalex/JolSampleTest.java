@@ -26,10 +26,8 @@ public class JolSampleTest {
 
         System.out.println(GraphLayout.parseInstance(map).toFootprint());
 
-        Map<String, Integer> values = new HashMap<>();
-        map.forEntries((key, value) -> {
-            values.put(String.valueOf(key), value);
-        });
+        Map<Integer, Integer> values = new HashMap<>();
+        map.forEntries(values::put);
 
         System.out.println(GraphLayout.parseInstance(values).toFootprint());
     }
